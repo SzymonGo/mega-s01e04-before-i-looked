@@ -70,7 +70,7 @@ describe('GET /digest/:night', () => {
     const html = await res.text();
     expect(res.status).toBe(200);
     expect(html).toContain('alpha/first');
-    expect(html).toContain("didn't parse");
+    expect(html).toMatch(/didn(&#39;|')t parse/);
   });
 });
 
