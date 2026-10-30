@@ -28,7 +28,21 @@ Read first: `docs/vision.md`, `docs/styleguide.md`. Decisions: `docs/adr/`.
    ```
 
 5. An issue is closed only when its "Done when" holds. If it can't hold yet, leave it open and
-   say what it waits on.
+   say what it waits on. A step that waits on someone else (a review, a reply) is done when
+   they have answered, not when you sent it.
+
+## Issue shape
+
+Every issue split from a plan carries, in this order (agreed with the human on 2026-10-30,
+plan morning-digest):
+
+- First line: `Source: plan.md § <n>`, the plan section it comes from.
+- Label: `plan:<plan name>` from the plan's frontmatter, e.g. `plan:morning-digest`.
+- `## Scope`: what to change, in the plan's words; no sections the plan doesn't have.
+- `## Done when`: the plan's check, word for word.
+- `## Blocked by`: issue numbers, or `None`. Split "start" from "close" when a part can start
+  on a contract but its check needs another issue.
+- `## Worker model`: strongest for logic, cheaper for views and tests (step 3 above).
 
 ## Skills
 
